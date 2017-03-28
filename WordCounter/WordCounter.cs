@@ -22,6 +22,7 @@ namespace WordCounter
 
         private static IDictionary<String, int> processInput(string[] dataSource)
         {
+            //Traverse through the input and add words to dictionary
             IDictionary<String, int> results = new Dictionary<String, int>();
             string word = "";
             for (int k = 0; k < dataSource.Length; k++)
@@ -50,6 +51,7 @@ namespace WordCounter
         
         public string ShowResult()
         {
+            //Convert dictionary to list and sort the list according the the number of occurences
             var r = WordCountMap.ToList();
             r.Sort((i, j) => j.Value.CompareTo(i.Value));
             return r.Show();
